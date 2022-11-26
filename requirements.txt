@@ -1,6 +1,8 @@
 django
 djangorestframework
 django-cors-headers
+postgresql
 psycopg2
 pandas
 openpyxl
+
