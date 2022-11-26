@@ -12,7 +12,7 @@ import pandas as pd
 
 def export_to_excel(request):
     # path_excel=os.path.abspath(os.path.dirname(__file__))+"\\"+"excel"+"\\"+"AdsManagerTemplate.xltx"
-    path_static_excel=path_excel="static/excel"+"\\"+"AdsManagerTemplate.xltx"
+    path_static_excel=path_excel="static/excel/"+"AdsManagerTemplate.xltx"
     df2=pd.read_excel(path_static_excel)
     data = []
     objs=Campiagn.objects.all();
