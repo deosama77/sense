@@ -1,7 +1,7 @@
 from django.db import models
 
 class Campiagn(models.Model):
-    code =models.CharField(max_length=150)
+    code =models.CharField(max_length=150 , blank=True,null=True,unique=True)
     platform=models.CharField(max_length=120)
     placement=models.CharField(max_length=120)
     page_name=models.CharField(max_length=120)
