@@ -131,5 +131,6 @@ ALLOWED_HOSTS = ['*']
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
+SECURE_SSL_REDIRECT =False
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ORIGIN_ALLOW_ALL = True
