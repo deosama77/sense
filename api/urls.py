@@ -43,4 +43,5 @@ urlpatterns = [
     path('exclude_custom/<int:pk>', ExcludedCustomDetails.as_view()),
 
     path('export_to_excel',export_to_excel),
+
 ]

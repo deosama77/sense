@@ -74,37 +74,7 @@ def getValueByField(obj,fieldName):
     field_object = obj._meta.get_field(fieldName)
     field_value = field_object.value_from_object(obj)
     return field_value;
-# def campaign_excel(request):
-#   campaigns = Campiagn.objects.all()
-#   buffer = io.BytesIO()
-#   workbook = xlsxwriter.Workbook(buffer)
-#   worksheet = workbook.add_worksheet("Ads Manager Template")
-#   header=['Campaign ID', 'Campaign Name','Campaign Status','Special Ad Categories','Special Ad Category Country',
-#                                          'Campaign Objective','Buying Type','Campaign Spent Limit','Campaign Daily Budget',
-#                                          'Campaign Lifetime Budget','Campaign Bid Strategy','Tags','Campaign Is Using L3 Schedule',
-#                                          'Campaign Start Time','Campaign Stop Time' , 'Ad Set ID' ,'Ad Set' ,'Run Status' ,'Ad Set Name' , 'Ad Set Time Start'
-#                                           'Ad Set Time Stop' ,'Ad Set Daily Budget' ,'Ad Set Lifetime Budget' ,'Link Object ID' ,'Link Application ID',
-#                                          'Countries', 'Global Regions', 'Excluded Global Regions', 'Cities', 'Regions',
-#                                          'Zip', 'Gender', 'Age Min', 'Age Max', 'Education Status',
-#                                          'College Start Year', 'College End Year','Interested In','Relationship','Connections','Excluded Connections','Friends of Connections'
-#                                          ,"Locles","Broad Category Clusters","Custom Audiences"
-#                                           ,"Excluded Custom Audiences","Location Cluster IDs","Publisher Platforms" ,"Device Platforms","Facebook Positions"
-#           "Excluded Location Cluster IDs",]
-#
-#   print("Abso path",os.path.abspath(os.path.dirname(__file__))+"\\"+"excel"+"\\"+"AdsManagerTemplate.xltx")
-#
-#   campaigns_list = campaigns.values_list('platform','placement')
-#
-#   for idx, month in enumerate(header):
-#       worksheet.write(0, idx, header[idx])
-#   for rowid in range(len(campaigns_list)):
-#       for columnid in range(len(campaigns_list[rowid])):
-#         worksheet.write(rowid+1, columnid, campaigns_list[rowid][columnid])
-#
-#   workbook.close()
-#   buffer.seek(0)
-#   headers = {'Content-Disposition': 'attachment; filename="campaign.xlsx"'}
-#   return FileResponse(buffer, headers=headers)
+
 
 class CampiagnList(generics.ListCreateAPIView):
     serializer_class=CampiagnSerializer
@@ -208,6 +178,9 @@ class RetargetingList(generics.ListCreateAPIView):
 class RetargetingDetails(generics.RetrieveUpdateDestroyAPIView):
     erializer_class = RetargetingSerializer
     queryset = Retargeting.objects.all()
+
+
+
 
 
 
