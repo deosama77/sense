@@ -96,7 +96,6 @@ class AddSetName(models.Model):
     label=models.CharField(max_length=140)
     class Meta:
         db_table = "api_add_set_name"
-
     def __str__(self):
         return self.label
 
@@ -104,5 +103,104 @@ class ExcludedCustom(models.Model):
     label=models.CharField(max_length=140)
     class Meta:
         db_table = "api_excluded_custom"
+    def __str__(self):
+        return self.label
+
+
+# other >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+class CampaignStatus(models.Model):
+    label=models.CharField(max_length=140)
+    class Meta:
+        db_table = "api_campaign_status"
+    def __str__(self):
+        return self.label
+
+
+class BuyingType(models.Model):
+    label=models.CharField(max_length=140)
+    class Meta:
+        db_table = "api_buying_type"
+    def __str__(self):
+        return self.label
+
+
+class AdSetBidStrategy(models.Model):
+    label=models.CharField(max_length=140)
+    class Meta:
+        db_table = "api_ad_set_bid_strategy"
+    def __str__(self):
+        return self.label
+
+
+class BillingEvent(models.Model):
+    label=models.CharField(max_length=140)
+    class Meta:
+        db_table = "api_billing_event"
+    def __str__(self):
+        return self.label
+
+
+class OptimizationGoal(models.Model):
+    label=models.CharField(max_length=140)
+    class Meta:
+        db_table = "api_optimization_goal"
+    def __str__(self):
+        return self.label
+
+class AudienceNetworkPositions(models.Model):
+    label=models.CharField(max_length=140)
+    class Meta:
+        db_table = "api_audience_network_positions"
+    def __str__(self):
+        return self.label
+
+
+class MessengerPositions(models.Model):
+    label=models.CharField(max_length=140)
+    class Meta:
+        db_table = "api_messenger_positions"
+    def __str__(self):
+        return self.label
+
+class FacebookPositions(models.Model):
+    label=models.CharField(max_length=140)
+    class Meta:
+        db_table = "api_facebook_positions"
+    def __str__(self):
+        return self.label
+
+class InstagramPositions(models.Model):
+    label=models.CharField(max_length=140)
+    class Meta:
+        db_table = "api_instagram_positions"
+    def __str__(self):
+        return self.label
+
+class AdSetRunStatus(models.Model):
+    label=models.CharField(max_length=140)
+    class Meta:
+        db_table = "api_ad_set_run_status"
+    def __str__(self):
+        return self.label
+
+class CampaignBidStrategy(models.Model):
+    label=models.CharField(max_length=140)
+    class Meta:
+        db_table = "api_campaign_bid_strategy"
+    def __str__(self):
+        return self.label
+
+class AdStatus(models.Model):
+    label=models.CharField(max_length=140)
+    class Meta:
+        db_table = "api_ad_status"
+    def __str__(self):
+        return self.label
+
+class OculusPositions(models.Model):
+    label=models.CharField(max_length=140)
+    class Meta:
+        db_table = "api_oculus_positions"
     def __str__(self):
         return self.label

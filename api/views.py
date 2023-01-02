@@ -2,9 +2,12 @@ from rest_framework import generics
 from .serializers import CampiagnSerializer,AudienceSerializer,AddSetNameSerializer,PlatformSerializer,PlacementSerializer,CampaignNameSerializer\
     ,PageNameSerializer,CampaignObjectiveSerializer,ExcludedCustomSerializer,CodeSerializer,EngagementSerializer,RetargetingSerializer
 from .models import Campiagn,Audience,AddSetName,Platform,Placement,CampaignName,PageName,CampaignObjective,ExcludedCustom,Code,Engagement,Retargeting
-from django.http import  FileResponse , JsonResponse , HttpResponse
+from django.http import  FileResponse  , HttpResponse
 
-import io
+# other
+from .models import CampaignBidStrategy,AdSetRunStatus,InstagramPositions,FacebookPositions,MessengerPositions,AudienceNetworkPositions,OptimizationGoal,BillingEvent,AdSetBidStrategy,BuyingType,CampaignStatus , AdStatus ,OculusPositions
+from .serializers import CampaignBidStrategySerializer,AdSetRunStatusSerializer ,InstagramPositionsSerializer , FacebookPositionsSerializer , MessengerPositionsSerializer,AudienceNetworkPositionsSerializer,OptimizationGoalSerializer,BillingEventSerializer,AdSetBidStrategySerializer,BuyingTypeSerializer,CampaignStatusSerializer , AdStatusSerializer, OculusPositionsSerializer
+
 from io import BytesIO
 import os
 import pandas as pd
@@ -180,8 +183,108 @@ class RetargetingDetails(generics.RetrieveUpdateDestroyAPIView):
     queryset = Retargeting.objects.all()
 
 
+# Other views ..............................................
+class CampaignStatusList(generics.ListCreateAPIView):
+    serializer_class = CampaignStatusSerializer
+    queryset = CampaignStatus.objects.all()
+
+class CampaignStatusDetails(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = CampaignStatusSerializer
+    queryset = CampaignStatus.objects.all()
+
+class AdSetRunStatusList(generics.ListCreateAPIView):
+    serializer_class = AdSetRunStatusSerializer;
+    queryset = AdSetRunStatus.objects.all()
+
+class AdSetRunStatusDetails(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = AdSetRunStatusSerializer;
+    queryset = AdSetRunStatus.objects.all()
+
+class CampaignBidStrategyList(generics.ListCreateAPIView):
+    serializer_class = CampaignBidStrategySerializer
+    queryset = CampaignBidStrategy.objects.all()
+
+class CampaignBidStrategyDetails(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = CampaignBidStrategySerializer
+    queryset = CampaignBidStrategy.objects.all()
+
+class InstagramPositionsList(generics.ListCreateAPIView):
+    serializer_class = InstagramPositionsSerializer
+    queryset = InstagramPositions.objects.all()
+
+class InstagramPositionsDetails(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = InstagramPositionsSerializer
+    queryset = InstagramPositions.objects.all()
+
+class FacebookPositionsList(generics.ListCreateAPIView):
+    serializer_class = FacebookPositionsSerializer
+    queryset = FacebookPositions.objects.all()
+
+class FacebookPositionsDetails(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = FacebookPositionsSerializer
+    queryset = FacebookPositions.objects.all()
+
+class MessengerPositionsList(generics.ListCreateAPIView):
+    serializer_class = MessengerPositionsSerializer
+    queryset = MessengerPositions.objects.all()
+
+class MessengerPositionsDetails(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = MessengerPositionsSerializer
+    queryset = MessengerPositions.objects.all()
+
+class AudienceNetworkPositionsList(generics.ListCreateAPIView):
+    serializer_class = AudienceNetworkPositionsSerializer
+    queryset = AudienceNetworkPositions.objects.all()
+
+class AudienceNetworkPositionsDetails(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = AudienceNetworkPositionsSerializer
+    queryset = AudienceNetworkPositions.objects.all()
+
+class OptimizationGoalList(generics.ListCreateAPIView):
+    serializer_class = OptimizationGoalSerializer
+    queryset = OptimizationGoal.objects.all()
+
+class OptimizationGoalDetails(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = OptimizationGoalSerializer
+    queryset = OptimizationGoal.objects.all()
+
+class BillingEventList(generics.ListCreateAPIView):
+    serializer_class = BillingEventSerializer
+    queryset = BillingEvent.objects.all()
+
+class BillingEventDetails(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = BillingEventSerializer
+    queryset = BillingEvent.objects.all()
+
+class AdSetBidStrategyList(generics.ListCreateAPIView):
+    serializer_class = AdSetBidStrategySerializer
+    queryset = AdSetBidStrategy.objects.all()
+
+class AdSetBidStrategyDetails(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = AdSetBidStrategySerializer
+    queryset = AdSetBidStrategy.objects.all()
+
+class BuyingTypeList(generics.ListCreateAPIView):
+    serializer_class = BuyingTypeSerializer
+    queryset = BuyingType.objects.all()
+
+class BuyingTypeDetails(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = BuyingTypeSerializer
+    queryset = BuyingType.objects.all()
 
 
+class AdStatusList(generics.ListCreateAPIView):
+    serializer_class = AdStatusSerializer
+    queryset = AdStatus.objects.all()
 
+class AdStatusDetails(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = AdStatusSerializer
+    queryset = AdStatus.objects.all()
 
+class OculusPositionsList(generics.ListCreateAPIView):
+    serializer_class = OculusPositionsSerializer
+    queryset = OculusPositions.objects.all()
 
+class OculusPositionsDetails(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = OculusPositionsSerializer
+    queryset = OculusPositions.objects.all()
